@@ -1,0 +1,24 @@
+1) Virtualization:
+   Virtualization refers to creating a virtual version of something such as Hardware, OS, storage device, network resources
+  
+	Infographic data (history of virtualization):
+	https://blog.storagecraft.com/infographic-history-virtualization/
+
+	https://docs.oracle.com/cd/E26996_01/E18549/html/VMUSG1010.html
+
+2) What is Docker:
+	Docker is software container platform designed to run and deploy applications using containers
+	Docker operates in deployment phase and makes the process of deployment easy in multiple environments
+
+3) Docker Architechture:
+	Developer ---> Docker File ---> Docker Image ---> Docker Containers
+						     ---> DockerHub
+	Client(CLI) ---> Server(with containers)
+
+4) Docker Engine:
+	Requests from Client to Server as commands/REST 
+	All the components of Docker Client and Docker Server forms Docker Engine
+	Clients and Server can be present on different hosts			
+
+
+PS: Follow https://www.youtube.com/watch?v=wi-MGFhrad0&list=PLhW3qG5bs-L99pQsZ74f-LC-tOEsBp2rK
