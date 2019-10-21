@@ -1,0 +1,9 @@
+Repositories are the places where docker images are dtored
+
+Public Repository:
+The contents in this repository are public. Can create by directly clicking 'create repository' option
+
+Private Repositoty:
+Container images in private repository are restricted to own account/organization/team
+
+

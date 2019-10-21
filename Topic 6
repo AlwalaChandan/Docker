@@ -1,0 +1,19 @@
+Docker Volume:
+Decoupling docker container from storage
+
+Commands Docker Volume:
+	docker volume create [name]
+	docker volume ls
+	docker volume [name] inspect
+	docker volume rm [name]
+	docker volume prune
+	
+Attach volume: (example)
+	docker run --name [container_name] -v [vol_name]:[/../../.. (home directory)] -p 8080:8080 -p 50000:50000 [image_name]
+
+Bind Mount: (example)
+	docker run --name [container_name] -v [/../../.. (local directory)]:[/../../.. (home directory)] -p 8081:8080 -p 50001:50000 [image_name]	
+ 
+
+
+	

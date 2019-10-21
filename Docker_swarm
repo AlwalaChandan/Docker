@@ -1,0 +1,37 @@
+Docker Swarm:
+Docker Swarm is a group of machines that are running Docker and joined into a cluster
+
+Install Docker Machine with 
+	base=https://github.com/docker/machine/releases/download/v0.16.0 &&
+  curl -L $base/docker-machine-$(uname -s)-$(uname -m) >/tmp/docker-machine &&
+  sudo mv /tmp/docker-machine /usr/local/bin/docker-machine &&
+  chmod +x /usr/local/bin/docker-machine
+
+Install virtualbox in linux
+
+Commands:
+	docker-machine create [name]
+	docker-machine ls
+	docker-machine ip [name]
+	docker-machine ssh [name]
+	
+	docker swarm init --advertise-addr [manager IP]
+	docker node ls (only in manager node)
+	docker swarm join-token [name_of_worker/manager]
+	docker info
+	
+	docker service create --replicas [n (including manager)] -p 80:80 --name [service_name] [image] (run on manager)
+	docker service ls (inside manager/node	
+	docker service ps [service-name]
+	docker service scale [name]=[number] (on manager)
+
+	docker node inspect [node_name]/ docker node inspect self
+	docker node update --availability drain [name]
+	docker service update --image [name] [service_name]
+	docker service rm [service-name]
+
+	docker swarm leave (on any node)
+	docker-machine stop [machine_name]	
+	docker-machine rm [machine_name]	(run from main)
+
+	 

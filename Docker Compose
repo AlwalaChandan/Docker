@@ -1,0 +1,21 @@
+Docker Compose:
+	Tool for defining and running multi-container docker applications
+	Use yaml files to configure application services.
+	
+Install docker compose
+	pip install -U docker-compose
+
+Create file docker-compose.yml
+
+Check Validity with
+	docker-compose config
+ 
+Run docker-compose file with 
+	docker-compose up -d
+
+To stop all containers from the file
+	docker-compose down
+
+Can scale services with the below example:
+	docker-compose up -d --scale [name]=[number]
+

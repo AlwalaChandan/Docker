@@ -1,0 +1,22 @@
+Docker File:
+A simple text file to create images
+
+Example: commands can be like
+1) Create a file named Dockerfile/ suggest the file with another name to it
+2) FROM [base image]/ FROM SCRATCH (scartch is empty image)
+3) MAINTAINER [gmail]
+4) RUN (run on image) (excecuted during building of the image)
+5) CMD (run on command line) (excecuted after we create container of the image)
+	more from https://www.youtube.com/redirect?redir_token=BkSVxpteGB7DrGsdwVzXaCWLhQ58MTU3MTU3MDY0N0AxNTcxNDg0MjQ3&q=https%3A%2F%2Fgithub.com%	2Fwsargent%2Fdocker-cheat-sheet%23dockerfile&v=LQjaJINkQXY&event=video_description
+
+docker build [location] / docker build -t myimage:1.0 . (if in the required location)
+
+Steps: 
+1) Create dockerfile
+2) Add instructions in docker file
+3) Build dockerfile to create image
+4) Run image to create container
+
+ 
+
+ 

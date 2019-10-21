@@ -1,0 +1,42 @@
+Docker Image:
+Docker images are templates to create docker containers. Docker image is a file comprised of multiple layers and is used to excecute code in docker container.
+
+Docker Container:
+Docker Container is a running instance of an image. Docker conatiner is a software package that includes everything such as code, runtime, system libraries to run an application
+
+Commands:
+	Basic:
+	docker -v (or) docker --version
+	docker info
+	docker --help (Ex: docker images --help)
+	docker login
+
+	Docker Images:
+	docker pull [name] / docker pull [name:version]
+	docker images
+	docker rmi
+	docker inspect [image name]	
+
+	Docker Containers:
+	docker ps
+	docker run [name] (will download the image if not present)
+	docker run --name [name of container] -it [name of image]
+	docker start [id]
+	docker stop [id]
+	docker pause [id]
+	docker unpause [id]
+	docker top [id] (gives top processes of the container)
+	docker stats [id] 
+	docker attach [id]
+	docker kill [id] (can remove only if the container is running)
+	docker rm [id]
+	docker history [id]	
+	
+	System Commands:
+	docker stats (check memory usage of docker on our system)
+	docker system df (check disk usage)
+	docker system prune
+
+	Logs:
+	docker logs [flag] [container name]
+	flags can be --details, --follow, --since, --tail, --timestamps, --until

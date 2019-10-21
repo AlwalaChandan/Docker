@@ -1,0 +1,23 @@
+Installing Docker on Linux System:
+
+	Follow https://docs.docker.com/v17.09/engine/installation/linux/docker-ce/ubuntu/#set-up-the-repository
+
+	Set-up a repository:
+	1) sudo apt-get update
+	2) sudo apt-get install \
+	    apt-transport-https \
+	    ca-certificates \
+	    curl \
+	    software-properties-common
+	3) curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+	4) sudo add-apt-repository \
+	   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+	   $(lsb_release -cs) \
+	   stable"
+
+	Install Docker CE:
+	1) sudo apt-get update
+	2) sudo apt-get install docker-ce
+
+	Check with 'docker -v' command
+	To avoid typing sudo before every command, 'sudo chmod 666 /var/run/docker.sock'
