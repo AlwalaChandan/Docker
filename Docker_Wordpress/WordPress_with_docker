@@ -1,0 +1,84 @@
+WordPress:
+The actual installation process of wordpress in our system is a bit hectic. With docker installed, we can set-up wordpress from docker cintainer with just one command. The system in which container runs need not actually have services installed (mysql in this case)
+
+We are using docker compose as we are using multiple services to build such as mysql, wordpress
+ 
+Create file named docker-compose.yaml
+
+File:
+
+version: '3'
+services: 
+  #Database
+  db:
+    image: mysql:5.7
+    volumes: 
+      - db_data:/var/lib/mysql
+    restart: always
+    environment: 
+      MYSQL_ROOT_PASSWORD: password (for db)
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: wordpress
+    networks: (to run all services on docker network)
+      - wpsite
+  
+  #wordpress
+  wordpress:
+    depends_on: 
+      -db
+    image: wordpress:latest
+    ports: 
+      - '8000:80'
+    restart: always
+    volumes:
+      - ['./:/var/www/html']
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: wordpress
+    networks:
+      - wpsite
+
+#map volumes and networks
+networks: 
+  wpsite:
+volumes:
+  db_data:
+
+
+1) 'docker ps' to find any containers
+2) 'docker login' to login to your dockerhub account
+3) run 'docker-compose up -d' where d is for detach
+4) 'localhost:8000' to get installation page of wordpress
+
+Add another service(php_myadmin) to existing docker-compose.yaml file to deep-dive into database
+  phpmyadmin:
+    depends_on:
+      - db
+    image: phpmyadmin/phpmyadmin
+    restart: always
+    ports:  
+      - '8080:80'
+    environment:
+      PMA_HOST: db
+      MYSQL_ROOT_PASSWORD: password
+    networks:
+      - wpsite
+
+1) Again run 'docker-compose up -d'
+2) Go to 'localhost:8080' 
+3) Find different tables from wordpress 
+4) 'docker-compose down' to remove containers
+5) Still find images with 'docker images' command
+
+
+
+
+
+
+
+
+
+
+
